@@ -36,3 +36,12 @@ Implementation details:
 
 
 
+Replicating the Issue:
+
+- Download the solution, open it and Visual Studio and simply start it with IIS.
+- You should see the editor come up and hydrate correctly.
+- Select the dropdown in the upper left corner of the rule editor to select the pre-created rule named "TEST".
+- Upon loading the rule, the library will fire the "CL11" error and the calculation will not properly load into the editor.
+- At this point, the calculation is broken and seemingly can't be fixed.
+
+The failure specifically appears to occur during the LoadRule process.  When it's attempting to decompile the Calculation, then it appears to be searching against a manifest of object methods for the appropriate key; however, the keys never line up.  The key the calculation is searching for is the name of the actual method on the object, but the values maintained in the manifest appear to have the custom names as laid out by the [Method] decorator.  I have attempted removing the custom names from the [Method] decorator entirely; however, the issue still seems to persist and the hydration process is unable to find the custom method within the context of the calculation.
