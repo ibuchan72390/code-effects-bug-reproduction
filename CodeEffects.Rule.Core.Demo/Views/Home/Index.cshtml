@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div style="width:560px;margin:20px auto;">
+	<h1 class="title">Rule Editor</h1>
+	<div style="margin-top:10px;">
+		<span>Info:</span>
+		<span id="Info" style="color:Red;">Demo version. Evaluations are delayed for 6 second.</span>
+	</div>
+	<div id="divRuleEditor" style="margin-top:10px;"></div>
+	<div style="margin-top:30px;">To simplify this demo project, we used a hard-coded instance of the Models.Patient class as a data object to evaluate your rules against (see HomeController.cs line 154 for details.) To test, create any rule in the Rule Area and click the Test button to evaluate it against that "hard-coded" Patient instance.</div>
+	<div style="text-align:right;margin-top:30px;"><input type="submit" id="Button" name="Button" value="Test" /></div>
+</div>
